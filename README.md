@@ -9,14 +9,16 @@ Based on bundle-less Symfony Flex approach to create web apps.
 - no fixtures, sorry
 
 Category
+```
 +-------+--------------+------+-----+---------+----------------+
 | Field | Type         | Null | Key | Default | Extra          |
 +-------+--------------+------+-----+---------+----------------+
 | id    | int(11)      | NO   | PRI | NULL    | auto_increment |
 | name  | varchar(255) | NO   |     | NULL    |                |
 +-------+--------------+------+-----+---------+----------------+
-
+```
 Product
+```
 +-------------+---------------+------+-----+---------+----------------+
 | Field       | Type          | Null | Key | Default | Extra          |
 +-------------+---------------+------+-----+---------+----------------+
@@ -26,6 +28,6 @@ Product
 | vat_percent | int(11)       | NO   |     | NULL    |                |
 | category_id | int(11)       | YES  | MUL | NULL    |                |
 +-------------+---------------+------+-----+---------+----------------+
-
+```
 
 more on flex: https://github.com/symfony/flex
