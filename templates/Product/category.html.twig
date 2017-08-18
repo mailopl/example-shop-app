@@ -1,0 +1,10 @@
+{% extends "Layout/base.html.twig" %}
+
+{% block content %}
+    <h1>Category {{ category.name }}</h1>
+    {% for product in products %}
+        <li>{{ product.category.name }} - {{ product.name }} - {{ product.getDisplayPrice }} <a href="{{ path('cart_add', {id: product.id}) }}">[Add]</a></li>
+    {% else %}
+        <p>No products found.</p>
+    {% endfor %}
+{% endblock %}

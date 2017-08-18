@@ -1,0 +1,20 @@
+<p>
+    <b>To the <a href="{{ path('home') }}">Home</a></b>
+</p>
+
+<p>
+    <b>To the <a href="{{ path('cart_view') }}">Cart</a></b>
+</p>
+<p>
+    {% if categories is defined %}
+        {% for category in categories %}
+            <a href="{{ path('app_product_category', {id: category.id}) }}">{{ category.name }}</a>
+        {% else %}
+            <p>No categories found.</p>
+        {% endfor %}
+    {% endif %}
+    <hr size="1" />
+</p>
+{% block content %}
+{% endblock %}
+

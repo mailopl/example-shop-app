@@ -1,0 +1,23 @@
+{% extends "Layout/base.html.twig" %}
+
+{% block content %}
+    {% for vatPercent, productsByVat in cart.getProductsInVatBuckets %}
+        <h5>VAT: {{ vatPercent }}</h5>
+        {% for cartProduct in productsByVat %}
+            <li>
+                {{ cartProduct.product.name }} {{ cartProduct.count }} * {{ cartProduct.product.displayPrice }} =
+                {{ cartProduct.count * cartProduct.product.Price }}
+
+                <a href="{{ path('cart_add', {id: cartProduct.product.id}) }}">[+1]</a>
+
+                <form method="post" action="{{ path('cart_remove', {id: cartProduct.product.id}) }}">
+                    <input type="submit" value="[X]" />
+                </form>
+            </li>
+        {% endfor %}
+    {% else %}
+        <p>No products found.</p>
+    {% endfor %}
+
+    Total: {{ cart.total }}
+{% endblock %}

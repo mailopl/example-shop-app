@@ -1,0 +1,5 @@
+spacex_shop:
+    resource: "@SpacexShopBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
